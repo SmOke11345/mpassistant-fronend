@@ -1,0 +1,17 @@
+$white: #ffffff;
+$black: #000000;
+$text: #6c778e;
+$violet: #702a8a;
+$blue: #1065ff;
+$green: #11ae88;
+$lavender: #cedff4;
+$section-color: #e8f2fc;
+
+$font-p: 22px;
+$font-h: 46px;
+
+%wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

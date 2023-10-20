@@ -1,0 +1,55 @@
+@import '../../app.component';
+
+.hero {
+    &__title {
+        &::after {
+            content: '';
+            background: url('../../../assets/img/home/hero/marketplaces-logos.svg')
+                no-repeat right bottom;
+            width: 196px;
+            height: 56px;
+            display: block;
+            margin: 15px;
+        }
+    }
+
+    &__subtitle {
+        margin: 60px 0;
+
+        p {
+            font-size: calc(#{$font-p + 4px});
+        }
+    }
+
+    .wrapper__item:first-child {
+        width: 50%;
+    }
+}
+
+// advantage
+
+.advantages {
+    background-color: $section-color;
+    margin: 100px 0;
+    border-radius: 20px;
+
+    &__item {
+        width: 30%;
+        min-width: 320px;
+    }
+
+    &__title {
+        margin-bottom: 8px;
+
+        h2 {
+            font-size: calc(#{$font-h + 24px});
+        }
+    }
+
+    &__inner {
+        padding: 60px 40px 50px;
+        flex-wrap: wrap;
+    }
+}
+
+// Possibilities

@@ -1,0 +1,136 @@
+<div class="overlay">
+    <div class="overlay_inner">
+        <a routerLink="/" class="close_btn"></a>
+        <form [formGroup]="form" (ngSubmit)="onsubmit()" class="form">
+            <div class="wrap">
+                <div class="form__title">
+                    <h2>Регистрация</h2>
+                </div>
+                <div class="form__subtitle">
+                    <p>
+                        У вас нет аккаунта? Создайте свой аккаунт, это займет
+                        меньше минуты.
+                    </p>
+                </div>
+                <!-- Выводим полученные ошибки -->
+                <div *ngIf="errors.length" class="errors">
+                    <p *ngFor="let error of errors">
+                        {{ error }}
+                    </p>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="grid__item">
+                    <label for="full_name"> ФИО </label>
+                    <input
+                        formControlName="full_name"
+                        type="text"
+                        name="full_name"
+                        id="full_name"
+                        placeholder="Фамилия Имя Отчество" />
+                    <div
+                        *ngIf="form.controls['full_name'].invalid"
+                        class="error">
+                        <p *ngIf="form.controls['full_name'].errors">
+                            Field is required
+                        </p>
+                    </div>
+                </div>
+                <div class="grid__item">
+                    <label for="password"> Пароль </label>
+                    <div class="input_inner">
+                        <input
+                            formControlName="password"
+                            [type]="inputType"
+                            name="password"
+                            id="password"
+                            placeholder="Введите пароль" />
+                        <div (click)="changeInputType()" class="show"></div>
+                    </div>
+                    <div
+                        *ngIf="form.controls['password'].invalid"
+                        class="error">
+                        <p *ngIf="form.controls['password'].errors">
+                            Field is required
+                        </p>
+                    </div>
+                </div>
+                <div class="grid__item">
+                    <label for="tel"> Номер телефона </label>
+                    <input
+                        formControlName="tel"
+                        type="tel"
+                        name="tel"
+                        id="tel"
+                        placeholder="+7 (999) 999-99-99"
+                        (keyup)="patternValueTel()"
+                        maxlength="18" />
+                    <div *ngIf="form.controls['tel'].invalid" class="error">
+                        <p *ngIf="form.controls['tel'].errors">
+                            Field is required
+                        </p>
+                    </div>
+                </div>
+                <div class="grid__item">
+                    <label for="promo_code"> Промокод </label>
+                    <div class="input_inner">
+                        <input
+                            formControlName="promo_code"
+                            type="text"
+                            name="promo_code"
+                            id="promo_code"
+                            placeholder="Введите промокод" />
+                        <div class="btn">Применить</div>
+                    </div>
+                </div>
+                <div class="grid__item">
+                    <label for="email"> Ваш e-mail </label>
+                    <input
+                        formControlName="email"
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="Введите ваш e-mail" />
+                    <div *ngIf="form.controls['email'].invalid" class="error">
+                        <p *ngIf="form.controls['email'].errors">
+                            Field is required
+                        </p>
+                    </div>
+                </div>
+                <div class="grid__item">
+                    <input
+                        formControlName="confirm"
+                        [checked]="isChecked"
+                        type="checkbox"
+                        name="confirm"
+                        id="required"
+                        (click)="changeIsChecked()"
+                        required />
+                    <div class="input_inner">
+                        <div *ngIf="isChecked" class="checked"></div>
+                        <label for="required">
+                            Я согласен со всеми условиями
+                            <a href="#">пользовательского соглашения</a> и
+                            <a href="#">политики конфиденциальности</a>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap wrapper">
+                <div class="wrap__item wrapper">
+                    <div class="user_action">
+                        <p>Уже есть аккаунт?</p>
+                    </div>
+                    <div class="user_action">
+                        <button class="btn login">Вход</button>
+                    </div>
+                </div>
+                <div class="wrap__item">
+                    <button class="btn" type="submit">
+                        Получить бесплатный доступ
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

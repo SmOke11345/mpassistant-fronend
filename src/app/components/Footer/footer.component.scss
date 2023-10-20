@@ -1,0 +1,64 @@
+@import '../../app.component';
+
+.footer {
+    background-color: $section-color;
+    padding: 60px 0 130px;
+
+    a {
+        color: $text;
+    }
+}
+
+.wrapper {
+    &__item {
+        .subtitle {
+            margin-left: 0;
+            margin-top: 15px;
+        }
+
+        .item_inner:nth-child(2) {
+            width: 250px;
+            margin: 35px 0 67px;
+        }
+
+        .item_inner:last-child {
+            width: 370px;
+
+            p {
+                font-size: calc(#{$font-p} - 2px);
+                color: $text;
+
+                &:last-child {
+                    margin-top: 25px;
+                }
+            }
+        }
+    }
+
+    &__item_right {
+        .item_inner:not(:first-child) {
+            margin-left: 130px;
+        }
+
+        ul.list {
+            li:not(:first-child) {
+                margin-top: 30px;
+            }
+        }
+    }
+
+    &__item_right.wrapper {
+        align-items: flex-start;
+    }
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .item_inner .card {
+        width: 500px;
+        margin-top: 45px;
+    }
+}

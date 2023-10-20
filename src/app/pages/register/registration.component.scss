@@ -1,0 +1,139 @@
+@import '../../app.component';
+
+.overlay {
+    @extend %wrapper;
+    background: url('../../../assets/img/register/background--large.jpg')
+        no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+
+    .overlay_inner {
+        width: 70%;
+        margin: 0 auto;
+        background-color: $white;
+        padding: 80px 60px;
+        position: relative;
+
+        .close_btn {
+            position: absolute;
+            background: url('../../../assets/img/register/register_close.svg')
+                no-repeat center center;
+            width: 48px;
+            height: 49px;
+            top: 40px;
+            right: 40px;
+            cursor: pointer;
+        }
+    }
+
+    .form {
+        gap: 36px;
+        display: grid;
+
+        &__title,
+        label {
+            color: $black;
+        }
+
+        &__subtitle {
+            width: 55%;
+            margin-top: 35px;
+        }
+
+        .error {
+            color: #ff0000;
+            font-size: calc(#{$font-p} - 6px);
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .errors {
+            background-color: #ff0000;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 20px;
+
+            p {
+                color: $white;
+            }
+        }
+
+        .user_action:first-child p {
+            font-size: calc(#{$font-p - 4px});
+            color: $text;
+            margin-right: 30px;
+        }
+    }
+
+    .grid {
+        &__item {
+            position: relative;
+
+            label {
+                margin-bottom: 20px;
+                display: block;
+                font-size: calc(#{$font-p} - 2px);
+            }
+
+            .input_inner .show {
+                position: absolute;
+                background: url('../../../assets/img/register/show_password.svg')
+                    no-repeat center center;
+                width: 29px;
+                height: 17px;
+                top: 24px;
+                right: 18px;
+                border: none;
+                cursor: pointer;
+            }
+
+            input[type='checkbox'] {
+                display: none;
+            }
+
+            label[for='required'] {
+                padding-left: 50px;
+
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 30px;
+                    height: 30px;
+                    border: 1px solid $lavender;
+                    border-radius: 4px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+
+            .checked {
+                background: url('../../../assets/img/register/check.svg')
+                    no-repeat center center;
+                position: absolute;
+                width: 20px;
+                height: 15px;
+                top: 8px;
+                left: 6px;
+            }
+        }
+
+        display: grid;
+        grid-template-columns: repeat(2, 48%);
+        column-gap: 40px;
+        row-gap: 27px;
+    }
+
+    .grid__item:last-child {
+        margin-top: 10px;
+
+        label {
+            color: $text;
+
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+}

@@ -1,0 +1,143 @@
+@import 'variables';
+
+.container {
+    width: 1604px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero {
+    .container {
+        width: 1644px;
+    }
+}
+
+.wrapper {
+    @extend %wrapper;
+}
+
+.violet {
+    color: $violet;
+}
+
+.blue {
+    color: $blue;
+}
+
+.green {
+    color: $green;
+}
+
+.header,
+.footer {
+    .logo {
+        height: 25px;
+    }
+
+    .subtitle {
+        width: 220px;
+        margin-left: 24px;
+
+        p {
+            font-size: calc(#{$font-p} - 8px);
+            color: $text;
+
+            span {
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+// buttons
+
+.btn:not(.login) {
+    background: linear-gradient(91deg, #11ae88 5.69%, #2a84ee 169.72%);
+    border-radius: 30px;
+    padding: 15px 20px;
+    letter-spacing: 0.36px;
+    color: $white;
+    cursor: pointer;
+
+    &:hover {
+        background: $green;
+    }
+}
+
+.user_action {
+    button.btn.login {
+        margin-right: 20px;
+        padding-left: 20px;
+        background: url('../img/header/login.avif') no-repeat left center;
+        cursor: pointer;
+    }
+}
+
+// inputs
+
+input {
+    border: 1px solid $lavender;
+    border-radius: 30px;
+    padding: 20px 0 20px 20px;
+    width: 100%;
+}
+
+input[placeholder] {
+    font-size: calc(#{$font-p} - 2px);
+    color: $text;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.input_inner {
+    position: relative;
+
+    .btn {
+        position: absolute;
+        top: 6px;
+        right: 5px;
+    }
+}
+
+// background
+
+.background {
+    background: url('../img/bakcground_promo.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.promo {
+    color: $white;
+
+    label {
+        display: none;
+    }
+
+    &__inner {
+        border-radius: 30px;
+        padding: 50px 40px;
+    }
+
+    &__title {
+        width: 80%;
+
+        p {
+            font-size: calc(#{$font-p - 1px});
+        }
+    }
+
+    &__form {
+        .input_inner {
+            margin-top: 41px;
+
+            .btn {
+                width: 303px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.title {
+    margin-bottom: 50px;
+}

@@ -1,0 +1,68 @@
+<footer class="footer">
+    <div class="container">
+        <div class="wrapper">
+            <div class="wrapper__item">
+                <div class="item_inner">
+                    <div class="logo">
+                        <img src="{{ logo }}" alt="" />
+                    </div>
+                    <div class="subtitle">
+                        <p>
+                            Аналитика и оцифровка продаж
+                            <span class="violet">Wildberries </span>и
+                            <span class="blue">Ozon</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="item_inner wrapper">
+                    <div *ngFor="let img of imagesLinks" class="links__item">
+                        <img src="{{ img.src }}" alt="" />
+                    </div>
+                </div>
+                <div class="item_inner">
+                    <p>&copy; 2022-2023 Mpassistant</p>
+                    <p>Информация, размещенная на сайте, не является публичной офертой</p>
+                </div>
+            </div>
+            <div class="wrap">
+                <div class="wrapper__item_right wrapper">
+                    <div class="item_inner">
+                        <ul class="list">
+                            <li><h4>Сервис</h4></li>
+                            <li><a href="#">Для кого</a></li>
+                            <li><a href="#">Возможности</a></li>
+                            <li><a href="#">Тарифы</a></li>
+                        </ul>
+                    </div>
+                    <div class="item_inner">
+                        <ul class="list">
+                            <li><h4>Клиентам</h4></li>
+                            <li><a href="#">Вход</a></li>
+                            <li><a href="#">Регистрация</a></li>
+                            <li><a href="#">Восстановление пароля</a></li>
+                        </ul>
+                    </div>
+                    <div class="item_inner">
+                        <ul class="list">
+                            <li><h4>Документы</h4></li>
+                            <li><a href="#">Пользовательское соглашение</a></li>
+                            <li>
+                                <a href="#">Политическая конфиденциальность</a>
+                            </li>
+                            <li><a href="#">Публичная оферта</a></li>
+                            <li><a href="#">Использование cookie</a></li>
+                            <li><a href="#">Техническая поддержка</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item_inner">
+                    <div class="card wrapper">
+                        <div *ngFor="let obj of imagesCards" class="card__item">
+                            <img src="{{ obj.src }}" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

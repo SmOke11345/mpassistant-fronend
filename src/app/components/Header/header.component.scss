@@ -1,0 +1,25 @@
+@import '../../app.component';
+
+.header {
+    padding: 25px 0;
+}
+
+.nav {
+    @extend %wrapper;
+}
+
+.wrap {
+    @extend %wrapper;
+}
+
+.nav {
+    width: 381px;
+    max-width: 100%;
+
+    &__item {
+        a {
+            color: $black;
+            font-size: calc(#{$font-p} - 4px);
+        }
+    }
+}
